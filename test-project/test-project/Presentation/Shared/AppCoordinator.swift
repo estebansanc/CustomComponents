@@ -31,4 +31,11 @@ class AppCoordinator: Coordinator {
         let vc = ViewController()
         navigationController.setViewControllers([vc], animated: false)
     }
+    
+    // MARK:- Setup View Controllers
+    private func setupNeumorphicVC() {
+        let vc = NeumorphicExampleViewController()
+        navigationController.setViewControllers([vc], animated: false)
+    }
+    
 }

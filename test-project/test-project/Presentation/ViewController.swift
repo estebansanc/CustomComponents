@@ -9,19 +9,20 @@ import UIKit
 
 class ViewController: UIViewController {
     // MARK:- Properties
-    let defaultLeadingSpace: CGFloat = 40
-    let defaultTrailingSpace: CGFloat = -40
+    let defaultLeadingSpace: CGFloat = 20
+    let defaultTrailingSpace: CGFloat = -20
     
     // MARK:- Views
-    let neumorphicView: NeumorphicView = {
-        let view = NeumorphicView()
-        return view
+    var blurBackgroundView: UIVisualEffectView = UIVisualEffectView()
+    
+    let blurredCardVC: BlurredCardViewController = {
+        let vc = BlurredCardViewController()
+        return vc
     }()
     
-    let neumorphicTextField: NeumorphicTextField = {
-        let view = NeumorphicTextField()
-        view.placeholder = "Enter your text here..."
-        view.textColor = .white
+    let backgroundImageView: UIImageView = {
+        let view = UIImageView(image: #imageLiteral(resourceName: "ExampleImage-2"))
+        view.contentMode = .scaleAspectFill
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -33,13 +34,17 @@ class ViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-
+    
     // MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemGreen
-        stackView.backgroundColor = view.backgroundColor
+        setupStrings()
+        setupActions()
+        setupAppearence()
+        setupBlur()
         
+        /// Only available if SkeletonView pod is installed
+        //        setupSkeleton()
     }
     
     override func viewDidLayoutSubviews() {
@@ -47,22 +52,32 @@ class ViewController: UIViewController {
         setupViews()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        neumorphicView.cornerRadius = neumorphicView.frame.height / 2
+    // MARK:- Setup Actions
+    func setupActions() {
     }
     
-    // MARK:- Setup
+    // MARK:- Objc Functions
+    
+    // MARK:- Setup Views
     private func setupViews() {
-        [stackView].forEach({ view.addSubview($0) })
-        [neumorphicTextField, neumorphicView].forEach({ stackView.addArrangedSubview($0) })
+        [backgroundImageView, blurBackgroundView, stackView].forEach({ view.addSubview($0) })
+        [blurredCardVC.view].forEach({ stackView.addArrangedSubview($0) })
         
         NSLayoutConstraint.activate([
+            // Background View
+            backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor),
+            backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             // Stack View
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: defaultLeadingSpace),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: defaultTrailingSpace),
@@ -70,13 +85,31 @@ class ViewController: UIViewController {
             stackView.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -100),
             
             // Neumorphic View
-            neumorphicView.heightAnchor.constraint(greaterThanOrEqualToConstant: 100),
-            neumorphicView.widthAnchor.constraint(equalTo: neumorphicView.heightAnchor),
-            
-            // Neumorphic Text Field
-            neumorphicTextField.heightAnchor.constraint(equalToConstant: 50),
+            blurredCardVC.view.heightAnchor.constraint(greaterThanOrEqualToConstant: 200),
         ])
         
+        blurBackgroundView.frame = view.bounds
+    }
+    
+    // MARK:- Setup Blur
+    func setupBlur() {
+        let blurEffect = UIBlurEffect(style: .systemChromeMaterialDark)
+        blurBackgroundView.effect = blurEffect
+        blurBackgroundView.alpha = 1
+    }
+    
+    /// Only available if SkeletonView pod is installed
+    //    private func setupSkeleton() {
+    //        view.setSkeletonableViews(views: )
+    //    }
+    
+    // MARK:- Setup Strings
+    private func setupStrings() { }
+    
+    // MARK:- Setup Appearence
+    func setupAppearence() {
+        view.backgroundColor = .black
     }
 }
+
 

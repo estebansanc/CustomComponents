@@ -8,9 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		D98001F12698B3A30014A0C1 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98001F02698B3A30014A0C1 /* UITextField+Extensions.swift */; };
+		D98001F42698D6B10014A0C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98001F32698D6B10014A0C1 /* ViewController.swift */; };
+		D98001F92698DEB00014A0C1 /* BlurredCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98001F82698DEB00014A0C1 /* BlurredCardViewController.swift */; };
+		D98001FC2698EE160014A0C1 /* BlurredDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98001FB2698EE160014A0C1 /* BlurredDescription.swift */; };
+		D98001FE2698F4840014A0C1 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98001FD2698F4840014A0C1 /* CustomLabel.swift */; };
 		D99E709526980A2F002C64E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E709426980A2F002C64E8 /* AppDelegate.swift */; };
 		D99E709726980A2F002C64E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E709626980A2F002C64E8 /* SceneDelegate.swift */; };
-		D99E709926980A2F002C64E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E709826980A2F002C64E8 /* ViewController.swift */; };
+		D99E709926980A2F002C64E8 /* NeumorphicExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E709826980A2F002C64E8 /* NeumorphicExampleViewController.swift */; };
 		D99E709E26980A2F002C64E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D99E709D26980A2F002C64E8 /* Assets.xcassets */; };
 		D99E70A126980A2F002C64E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D99E709F26980A2F002C64E8 /* LaunchScreen.storyboard */; };
 		D99E70AB26980BA5002C64E8 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E70AA26980BA5002C64E8 /* AppCoordinator.swift */; };
@@ -40,10 +44,14 @@
 
 /* Begin PBXFileReference section */
 		D98001F02698B3A30014A0C1 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		D98001F32698D6B10014A0C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D98001F82698DEB00014A0C1 /* BlurredCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredCardViewController.swift; sourceTree = "<group>"; };
+		D98001FB2698EE160014A0C1 /* BlurredDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredDescription.swift; sourceTree = "<group>"; };
+		D98001FD2698F4840014A0C1 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		D99E709126980A2F002C64E8 /* test-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "test-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D99E709426980A2F002C64E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D99E709626980A2F002C64E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D99E709826980A2F002C64E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D99E709826980A2F002C64E8 /* NeumorphicExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphicExampleViewController.swift; sourceTree = "<group>"; };
 		D99E709D26980A2F002C64E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D99E70A026980A2F002C64E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D99E70A226980A2F002C64E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -92,6 +100,23 @@
 			path = NeumorphicComponents;
 			sourceTree = "<group>";
 		};
+		D98001F72698DE690014A0C1 /* BlurredCard */ = {
+			isa = PBXGroup;
+			children = (
+				D98001FA2698EAD20014A0C1 /* Subviews */,
+				D98001F82698DEB00014A0C1 /* BlurredCardViewController.swift */,
+			);
+			path = BlurredCard;
+			sourceTree = "<group>";
+		};
+		D98001FA2698EAD20014A0C1 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				D98001FB2698EE160014A0C1 /* BlurredDescription.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		D99E708826980A2F002C64E8 = {
 			isa = PBXGroup;
 			children = (
@@ -122,7 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				D99E709F26980A2F002C64E8 /* LaunchScreen.storyboard */,
-				D99E709826980A2F002C64E8 /* ViewController.swift */,
+				D99E709826980A2F002C64E8 /* NeumorphicExampleViewController.swift */,
+				D98001F32698D6B10014A0C1 /* ViewController.swift */,
 				D99E70A926980B99002C64E8 /* Shared */,
 			);
 			path = Presentation;
@@ -151,6 +177,7 @@
 		D99E70B226980F2D002C64E8 /* CustomComponents */ = {
 			isa = PBXGroup;
 			children = (
+				D98001F72698DE690014A0C1 /* BlurredCard */,
 				D98001F22698D4AF0014A0C1 /* NeumorphicComponents */,
 			);
 			path = CustomComponents;
@@ -208,6 +235,7 @@
 		D99E70E42698232D002C64E8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D98001FD2698F4840014A0C1 /* CustomLabel.swift */,
 				D99E70C226981D3E002C64E8 /* PaddingLabel.swift */,
 				D99E70BC26981D3E002C64E8 /* MediaPicker.swift */,
 				D99E70C026981D3E002C64E8 /* ImagePicker.swift */,
@@ -302,14 +330,18 @@
 				D99E70D526981D3E002C64E8 /* StringExtensions.swift in Sources */,
 				D99E70CF26981D3E002C64E8 /* CGFloatExtensions.swift in Sources */,
 				D99E70D926981D3E002C64E8 /* UIViewControllerExtensions.swift in Sources */,
+				D98001FE2698F4840014A0C1 /* CustomLabel.swift in Sources */,
 				D99E70D226981D3E002C64E8 /* MediaPicker.swift in Sources */,
+				D98001F42698D6B10014A0C1 /* ViewController.swift in Sources */,
 				D99E70CD26981D3E002C64E8 /* GenericCollectionViewClasses.swift in Sources */,
 				D99E70E626982A2A002C64E8 /* NeumorphicTextField.swift in Sources */,
-				D99E709926980A2F002C64E8 /* ViewController.swift in Sources */,
+				D99E709926980A2F002C64E8 /* NeumorphicExampleViewController.swift in Sources */,
+				D98001F92698DEB00014A0C1 /* BlurredCardViewController.swift in Sources */,
 				D99E70AF26980BC1002C64E8 /* CoordinatorProtocol.swift in Sources */,
 				D99E709526980A2F002C64E8 /* AppDelegate.swift in Sources */,
 				D99E709726980A2F002C64E8 /* SceneDelegate.swift in Sources */,
 				D98001F12698B3A30014A0C1 /* UITextField+Extensions.swift in Sources */,
+				D98001FC2698EE160014A0C1 /* BlurredDescription.swift in Sources */,
 				D99E70D726981D3E002C64E8 /* LoadingOverlay.swift in Sources */,
 				D99E70DE26981D3E002C64E8 /* FileDownloader.swift in Sources */,
 			);
